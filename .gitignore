@@ -1,0 +1,8 @@
+*.sqlite3
+*.env
+*.vscode
+*.ide
+Procfile
+__pycache__/
+
+
