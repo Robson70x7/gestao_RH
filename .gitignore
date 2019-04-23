@@ -2,6 +2,7 @@
 *.env
 *.vscode
 *.ide
+*.pyc
 Procfile
 __pycache__/
 
