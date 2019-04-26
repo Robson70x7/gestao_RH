@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+<div class="row">
+    <div class="col-lg-12">
+
+        <table class="table table-light table-hover">
+            <legend>Empresas</legend>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for empresa in empresas %}
+                <tr>
+                    <td>{{ empresa}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{% endblock main %}

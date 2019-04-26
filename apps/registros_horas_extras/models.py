@@ -4,7 +4,7 @@ from apps.funcionarios.models import Funcionario
 
 class RegistroHoraExtra(models.Model):
 
-    motivo = models.CharField(max_length=100)
+    motivo_hora_extra = models.CharField(max_length=100)
     funcionario = models.ForeignKey(Funcionario, on_delete=models.PROTECT)
 
     class Meta:

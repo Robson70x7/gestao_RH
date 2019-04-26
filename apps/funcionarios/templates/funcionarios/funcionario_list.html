@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<table class="table table-light table-hover">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Departamento</th>
+            <th>Empresa</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for funcionario in funcionarios %}
+        <tr>
+            <td>{{ funcionario.nome }}</td>
+            <td>
+                {% for dept in funcionario.departamento.all %}
+                   {{ dept }}                  
+                {% endfor %}
+                    
+               
+            </td>
+            <td>{{ funcionario.empresa }}</td>
+            <td>
+                <div class="btn-group btn-group-sm" role="group">
+                    <a href="{% url 'funcionarios:detalhe' funcionario.id %}" class="btn btn-info"> Detalhe </a>
+                    <a href="{% url 'funcionarios:atualizar' funcionario.id %}" class="btn btn-warning"> Atualizar </a>
+                    <a href="{% url 'funcionarios:excluir' funcionario.id %}" class="btn btn-danger"> Excluir </a>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock main %}
