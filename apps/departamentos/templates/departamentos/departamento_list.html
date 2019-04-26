@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <a href="{% url 'departamentos:novo' %}" class="btn btn-success" style="float:right"> Novo </a> <br><br>
+            <table class="table table-light table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for departamento in departamentos %}
+                    <tr>
+                        <td>{{ departamento.nome }}</td>
+                        <td>
+                            <div class="btn-group btn-group-sm" role="group">
+                                <a href="" class="btn btn-warning">Detalhes</a>
+                                <a href="{% url 'departamentos:editar' departamento.id %}" class="btn btn-info">Atualizar</a>
+                                <a href="{% url 'departamentos:excluir' departamento.id %}" class="btn btn-danger">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock main %}
+    

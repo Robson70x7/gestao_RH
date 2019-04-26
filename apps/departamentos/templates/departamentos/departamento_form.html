@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+    <div class="row">
+        <div class="col-lg10 offset-lg-1">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+{% endblock main %}
+    
