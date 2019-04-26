@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block main %}
+<a href="{% url 'funcionarios:criar' %}" class="btn btn-primary">Novo</a>
 <table class="table table-light table-hover">
+
     <thead>
         <tr>
             <th>Nome</th>

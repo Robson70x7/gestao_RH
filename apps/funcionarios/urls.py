@@ -8,4 +8,5 @@ urlpatterns = [
     path('editar/<int:pk>/', views.FuncionarioUpdate.as_view(), name='atualizar'),
     path('detalhe/<int:pk>/', views.FuncionarioDetalhe.as_view(), name='detalhe'),
     path('excluir/<int:pk>/', views.FuncionarioDelete.as_view(), name='excluir'),
+    path('novo/', views.FuncionarioCreate.as_view(), name='criar'),
 ]
